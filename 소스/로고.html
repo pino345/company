@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+  background: #f0f0f0;
+}
+
+#wrap {
+  margin: -200px 0 0 -250px;
+  width: 500px;
+  height: 400px;
+  background: #86b1c2;
+  border: 20px solid #FFF;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+        .milk_bottle {
+  margin: -120px 0 0 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(-130deg);
+  -webkit-transform: rotate(-130deg);
+  animation: bottlemove 1.7s ease-in-out infinite;
+  -webkit-animation: bottlemove 1.7s ease-in-out infinite;
+}
+
+.milk_bottle .bottle {
+  margin-left: 3px;
+  width: 30px;
+  height: 40px;
+  background: #e8dcd8;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 5px 5px 0 #65a9c1;
+  position: relative;
+  z-index: 4;
+}
+
+.milk_bottle .bottle:before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 2px;
+  background: #cdd3d7;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  animation: bottledetailmove 1.7s ease-in-out infinite;
+  -webkit-animation: bottledetailmove 1.7s ease-in-out infinite;
+}
+
+.milk_bottle .bottle:after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 2px;
+  background: #cdd3d7;
+  position: absolute;
+  top: 20px;
+  left: 5px;
+  animation: bottledetailmove 1.7s ease-in-out infinite;
+  -webkit-animation: bottledetailmove 1.7s ease-in-out infinite;
+}
+
+.milk_bottle .tube_bottom {
+  width: 36px;
+  height: 7px;
+  background: #f3cf9f;
+  border-radius: 5px;
+  box-shadow: 5px 5px 0 #65a9c1;
+  position: relative;
+  z-index: 3;
+}
+
+.milk_bottle .tube_middle {
+  margin: 0 auto;
+  width: 30px;
+  height: 7px;
+  background: #f1b980;
+  border-top-left-radius: 400%;
+  border-top-right-radius: 400%;
+  box-shadow: 5px 5px 0 #65a9c1;
+}
+
+.milk_bottle .tube_top {
+  margin: 0 auto;
+  width: 10px;
+  height: 7px;
+  background: #f1b980;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  box-shadow: 5px 5px 0 #65a9c1;
+}
+        @keyframes bottlemove {
+  0% {
+    top: 50%;
+    transform: rotate(-130deg);
+  }
+  50% {
+    top: 47%;
+    transform: rotate(-115deg);
+  }
+  100% {
+    top: 50%;
+    transform: rotate(-130deg);
+  }
+}
+
+@-webkit-keyframes bottlemove {
+  0% {
+    top: 50%;
+    transform: rotate(-130deg);
+  }
+  50% {
+    top: 47%;
+    transform: rotate(-115deg);
+  }
+  100% {
+    top: 50%;
+    transform: rotate(-130deg);
+  }
+}
+
+@keyframes bottledetailmove {
+  0% {
+    left: 5px;
+  }
+  50% {
+    left: 15px;
+  }
+  100% {
+    left: 5px;
+  }
+}
+
+@-webkit-keyframes bottledetailmove {
+  0% {
+    left: 5px;
+  }
+  50% {
+    left: 15px;
+  }
+  100% {
+    left: 5px;
+  }
+}
+    </style>
+</head>
+<body>
+<div id="wrap">
+  <div class="milk_bottle">
+    <div class="tube_top"></div>
+    <div class="tube_middle"></div>
+    <div class="tube_bottom"></div>
+    <div class="bottle"></div>
+  </div>
+</div>
+</body>
+</html>
