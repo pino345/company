@@ -3,8 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <title>오뚜기에 오신걸 환영합니다.</title>
+    <link rel="shortcut icon" href="images/logo.png">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        header{
+            border: 1px solid lightgreen;
+            width: 100%;
+            height: 90px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        header > div{
+            border: 1px solid cornflowerblue;
+            margin: 0 auto;
+            max-width: 1200px;
+            height: inherit;
+            display: flex; 
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo{
+            border: 1px solid gold;
+            width: 100px;
+            height: 80px;
+            background: url(images/logo.png) no-repeat center center / contain;
+        }
+        header nav{
+            border: 1px solid gold;
+            width: 800px;
+            height: 80px;
+        }
+        header nav ul{
+            
+        }
+        .naviRight{
+            border: 1px solid gold;
+            width: 150px;
+            height: 80px;
+        }
+    </style>
 </head>
 <body>
-    
+    <header>
+        <div>
+            <div class="logo"></div>
+        <nav id="topNavi">
+            <ul>
+                <li>회사소개</li>
+                <li>홍보채널</li>
+                <li>고객지원</li>
+                <li>채용</li>
+                <li>쇼핑몰</li>
+            </ul>
+        </nav>
+        <div class="naviRight">
+            
+        </div>
+        </div>
+    </header>
 </body>
 </html>
