@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <title>오뚜기에 오신걸 환영합니다.</title>
     <link rel="shortcut icon" href="images/logo.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <style>
         *{
             margin: 0;
             padding: 0;
+        }
+        a{
+            color: black;
+            text-decoration: none;
         }
         li{
             list-style: none;
@@ -15,18 +20,17 @@
         header{
             border: 1px solid lightgreen;
             width: 100%;
-            height: 90px;
+            height: 80px;
             position: absolute;
             top: 0;
             left: 0;
         }
-        header > div{
+        .wrap{
             border: 1px solid cornflowerblue;
             margin: 0 auto;
             max-width: 1200px;
             height: inherit;
             display: flex; 
-            align-items: center;
             justify-content: space-between;
         }
         .logo{
@@ -35,37 +39,161 @@
             height: 80px;
             background: url(images/logo.png) no-repeat center center / contain;
         }
-        header nav{
+        #topNavi{
             border: 1px solid gold;
-            width: 800px;
+            width: 750px;
             height: 80px;
         }
-        header nav ul{
-            
+        .depth1{
+            height: 80px;
+            overflow: hidden;
+            line-height: 80px;
+            text-align: center;
+            z-index: 3;
+        }
+        .depth1:hover{
+            overflow: visible;
+        }
+        .depth1 > li{
+            float: left;
+            display: block;
+            z-index: 3;
+            width: 148px;
+            height: 80px;
+            border: 1px solid skyblue;
+        }
+        .naviBg{
+            border: 1px solid darkorange;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+        .depth1:hover ~ .naviBg{
+            height: 250px;
+            overflow: visible;
+            opacity: .8;
+            background-color: aliceblue;
+            z-index: -1;
+        }
+        .navi_ico{
+            border: 1px solid blue;
+            width: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .navi_ico a{
+            width: 150px;
+            height: 80px;
+        }
+        .ico{
+            width: 27px;
+            height: 27px;
+            background: url(images/ico_gnb_top02.png) no-repeat center center;
+            transition: all 1s ease-in-out 1s;
+        }
+        .navi_ico a:hover ~ .navi_ico. ico{
+            opacity: 1;
+        }
+        .numb{
+            border: 1px solid gray;
+            width: 150px;
+            height: 80px;
+        }
+        .depth2 li{
+            height: 30px;
         }
         .naviRight{
             border: 1px solid gold;
             width: 150px;
             height: 80px;
         }
+        .naviRight i{
+            font-size: 30px;
+            line-height: 80px;
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <div>
+        <div class="wrap">
             <div class="logo"></div>
-        <nav id="topNavi">
-            <ul>
-                <li>회사소개</li>
-                <li>홍보채널</li>
-                <li>고객지원</li>
-                <li>채용</li>
-                <li>쇼핑몰</li>
-            </ul>
-        </nav>
-        <div class="naviRight">
-            
-        </div>
+            <nav id="topNavi">
+                <ul class="depth1">
+                    <li>
+                        <div class="navi_ico">
+                            <a href="#">회사소개</a>
+                            <div class="ico"></div>
+                            <div class="numb">01</div>
+                        </div>
+                            <ul class="depth2">
+                                <li><a href="#">(주)오뚜기 소개</a></li>
+                                <li><a href="#">연혁</a></li>
+                                <li><a href="#">CI</a></li>
+                                <li><a href="#">투자정보</a></li>
+                                <li><a href="#">오시는 길</a></li>
+                            </ul>
+                    </li>
+                    <li>
+                        <dt><a href="#">홍보채널</a></dt>
+                        <div class="navi_ico">
+                            <div class="ico"></div>
+                            <div class="numb"></div>
+                        </div>
+                        <dd>
+                            <ul class="depth2">
+                                <li><a href="#">뉴스</a></li>
+                                <li><a href="#">미디어</a></li>
+                                <li><a href="#">SNS&amp;이벤트</a></li>
+                                <li><a href="#">행복이 가득한 집</a></li>
+                                <li><a href="#">견학신청</a></li>
+                            </ul>
+                        </dd>
+                    </li>
+                    <li>
+                        <dt><a href="#">고객</a></dt>
+                        <div class="navi_ico">
+                            <div class="ico"></div>
+                            <div class="numb"></div>
+                        </div>
+                        <dd>
+                            <ul class="depth2">
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">고객상담실</a></li>
+                            </ul>
+                        </dd>
+                    </li>
+                    <li>
+                        <dt><a href="#">고객센터</a></dt>
+                        <div class="navi_ico">
+                            <div class="ico"></div>
+                            <div class="numb"></div>
+                        </div>
+                        <dd>
+                            <ul class="depth2">
+                                <li><a href="#">채용공고</a></li>
+                                <li><a href="#">인사제도</a></li>
+                                <li><a href="#">직무소개</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">입사지원</a></li>
+                            </ul>
+                        </dd>
+                    </li>
+                    <li>쇼핑몰</li>
+                </ul>
+                <div class="naviBg"></div>
+            </nav>
+            <div class="naviRight">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                <i class="fa fa-globe" aria-hidden="true"></i>
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
         </div>
     </header>
 </body>
