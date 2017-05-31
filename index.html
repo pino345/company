@@ -17,8 +17,9 @@
         li{
             list-style: none;
         }
+        
         header{
-            border: 1px solid lightgreen;
+            border-bottom: 1px solid darkgray;
             width: 100%;
             height: 80px;
             position: absolute;
@@ -26,97 +27,123 @@
             left: 0;
         }
         .wrap{
-            border: 1px solid cornflowerblue;
             margin: 0 auto;
             max-width: 1200px;
             height: inherit;
-            display: flex; 
-            justify-content: space-between;
+            display: flex;
+            justify-content: space-around;
         }
         .logo{
-            border: 1px solid gold;
-            width: 100px;
-            height: 80px;
+            width: 75px;
+            height: 75px;
+            margin: 0 20px;
             background: url(images/logo.png) no-repeat center center / contain;
+            transform: rotate(-10deg);
+            transform-origin: 50% 100%;
+            animation: logoMove 4s ease-in-out infinite;
+        }
+        @keyframes logoMove{
+            0%{transform: rotate(-10deg);}
+            50%{transform: rotate(10deg);}
+            100%{transform: rotate(-10deg);}
         }
         #topNavi{
-            border: 1px solid gold;
             width: 750px;
             height: 80px;
+            overflow: hidden;
+            z-index: 10;
+        }
+        #topNavi:hover{
+            height: 330px;
+            overflow: visible;
         }
         .depth1{
             height: 80px;
-            overflow: hidden;
             line-height: 80px;
             text-align: center;
-            z-index: 3;
         }
-        .depth1:hover{
-            overflow: visible;
-        }
-        .depth1 > li{
+        .depth1 > li, .depth1 > li > a{
             float: left;
-            display: block;
-            z-index: 3;
             width: 148px;
             height: 80px;
-            border: 1px solid skyblue;
         }
-        .naviBg{
-            border: 1px solid darkorange;
+        .navi_layer{
+            width: 100%;
+            border-bottom: 1px solid gray;
             position: absolute;
-            top: 80px;
+            top: 81px;
             left: 0;
             right: 0;
-            width: 100%;
-            height: 0;
-            overflow: hidden;
-            opacity: 0;
-        }
-        .depth1:hover ~ .naviBg{
-            height: 250px;
-            overflow: visible;
-            opacity: .8;
-            background-color: aliceblue;
             z-index: -1;
+            height: 0px;
+            opacity: 0;
+            transition: all .2s ease-in-out;
+        }
+        #topNavi:hover .navi_layer{
+            height: 230px;
+            opacity: 1;
+        }
+        .white_bg{
+            background-color: floralwhite;
+            height: 99%;
         }
         .navi_ico{
-            border: 1px solid blue;
             width: 150px;
+            height: 35px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .navi_ico a{
-            width: 150px;
-            height: 80px;
+            align-items: flex-end;
+            justify-content: center;
         }
         .ico{
             width: 27px;
             height: 27px;
             background: url(images/ico_gnb_top02.png) no-repeat center center;
-            transition: all 1s ease-in-out 1s;
+            opacity: 0;
+            z-index: 5;
+            position: absolute;
+            top: 70px;
+            transition: all 0.3s ease-in-out;
         }
-        .navi_ico a:hover ~ .navi_ico. ico{
+        .depth1 li:nth-child(1):hover .ico, .depth1 li:nth-child(2):hover .ico, .depth1 li:nth-child(3):hover .ico, .depth1 li:nth-child(4):hover .ico{
+            position: absolute;
+            top: 90px;
             opacity: 1;
+            background-color: floralwhite;
         }
         .numb{
-            border: 1px solid gray;
+            z-index: 4;
             width: 150px;
-            height: 80px;
+            height: 16px;
+            line-height: 16px;
+        }
+        .depth2{ 
+            width: 150px;
+            height: 150px;
+            margin-top: 10px;
         }
         .depth2 li{
             height: 30px;
+            line-height: 30px;
         }
         .naviRight{
-            border: 1px solid gold;
-            width: 150px;
+            width: 180px;
             height: 80px;
+            line-height: 80px;
         }
         .naviRight i{
+            border: 1px solid darkgray;
+            border-radius: 2px;
+            color: dimgray;
             font-size: 30px;
-            line-height: 80px;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            padding: 5px;
             margin-left: 10px;
+        }
+        section{
+            clear: both;
+            margin-top: 80px;
         }
     </style>
 </head>
@@ -127,74 +154,73 @@
             <nav id="topNavi">
                 <ul class="depth1">
                     <li>
+                        <a href="#">회사소개</a>
                         <div class="navi_ico">
-                            <a href="#">회사소개</a>
-                            <div class="ico"></div>
+                            <div class="ico a"></div>
                             <div class="numb">01</div>
                         </div>
-                            <ul class="depth2">
-                                <li><a href="#">(주)오뚜기 소개</a></li>
-                                <li><a href="#">연혁</a></li>
-                                <li><a href="#">CI</a></li>
-                                <li><a href="#">투자정보</a></li>
-                                <li><a href="#">오시는 길</a></li>
-                            </ul>
+                        <ul class="depth2">
+                            <li><a href="#">(주)오뚜기 소개</a></li>
+                            <li><a href="#">연혁</a></li>
+                            <li><a href="#">CI</a></li>
+                            <li><a href="#">투자정보</a></li>
+                            <li><a href="#">오시는 길</a></li>
+                        </ul>                
                     </li>
                     <li>
-                        <dt><a href="#">홍보채널</a></dt>
+                        <a href="#">홍보채널</a>
                         <div class="navi_ico">
-                            <div class="ico"></div>
-                            <div class="numb"></div>
+                            <div class="ico b"></div>
+                            <div class="numb">02</div>
                         </div>
-                        <dd>
-                            <ul class="depth2">
-                                <li><a href="#">뉴스</a></li>
-                                <li><a href="#">미디어</a></li>
-                                <li><a href="#">SNS&amp;이벤트</a></li>
-                                <li><a href="#">행복이 가득한 집</a></li>
-                                <li><a href="#">견학신청</a></li>
-                            </ul>
-                        </dd>
+                        <ul class="depth2">
+                            <li><a href="#">뉴스</a></li>
+                            <li><a href="#">미디어</a></li>
+                            <li><a href="#">SNS&amp;이벤트</a></li>
+                            <li><a href="#">행복이 가득한 집</a></li>
+                            <li><a href="#">견학신청</a></li>
+                        </ul>
                     </li>
                     <li>
-                        <dt><a href="#">고객</a></dt>
+                        <a href="#">고객센터</a>
                         <div class="navi_ico">
-                            <div class="ico"></div>
-                            <div class="numb"></div>
+                            <div class="ico c"></div>
+                            <div class="numb">03</div>
                         </div>
-                        <dd>
-                            <ul class="depth2">
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">고객상담실</a></li>
-                            </ul>
-                        </dd>
+                        <ul class="depth2">
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">고객상담실</a></li>
+                        </ul>
                     </li>
                     <li>
-                        <dt><a href="#">고객센터</a></dt>
+                        <a href="#">채용</a>
                         <div class="navi_ico">
-                            <div class="ico"></div>
-                            <div class="numb"></div>
+                            <div class="ico d"></div>
+                            <div class="numb">04</div>
                         </div>
-                        <dd>
-                            <ul class="depth2">
-                                <li><a href="#">채용공고</a></li>
-                                <li><a href="#">인사제도</a></li>
-                                <li><a href="#">직무소개</a></li>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">입사지원</a></li>
-                            </ul>
-                        </dd>
+                        <ul class="depth2">
+                            <li><a href="#">채용공고</a></li>
+                            <li><a href="#">인사제도</a></li>
+                            <li><a href="#">직무소개</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">입사지원</a></li>
+                        </ul>
                     </li>
-                    <li>쇼핑몰</li>
+                    <li><a href="#">쇼핑몰</a></li>
                 </ul>
-                <div class="naviBg"></div>
+                <div class="navi_layer">
+                    <div class="white_bg"></div>
+                </div>          
             </nav>
             <div class="naviRight">
-                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                <i class="fa fa-globe" aria-hidden="true"></i>
-                <i class="fa fa-search" aria-hidden="true"></i>
+                <a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-globe" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
             </div>
         </div>
     </header>
+    <section>
+        <img src="images/eco.jpg">
+    </section>
 </body>
 </html>
