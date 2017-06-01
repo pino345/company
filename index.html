@@ -22,9 +22,9 @@
             border-bottom: 1px solid darkgray;
             width: 100%;
             height: 80px;
-            position: absolute;
-            top: 0;
-            left: 0;
+            position: fixed;
+            z-index: 100;
+            background-color: white;
         }
         .wrap{
             margin: 0 auto;
@@ -37,7 +37,7 @@
             width: 75px;
             height: 75px;
             margin: 0 20px;
-            background: url(images/logo.png) no-repeat center center / contain;
+            background: url("http://placehold.it/50x50") no-repeat center center / cover;
             transform: rotate(-10deg);
             transform-origin: 50% 100%;
             animation: logoMove 4s ease-in-out infinite;
@@ -97,9 +97,9 @@
         .ico{
             width: 27px;
             height: 27px;
-            background: url(images/ico_gnb_top02.png) no-repeat center center;
+            background: url(src="http://placehold.it/27x27") no-repeat center center;
             opacity: 0;
-            z-index: 5;
+            z-index: 100;
             position: absolute;
             top: 70px;
             transition: all 0.3s ease-in-out;
@@ -108,7 +108,7 @@
             position: absolute;
             top: 90px;
             opacity: 1;
-            background-color: floralwhite;
+            background-color: gold;
         }
         .numb{
             z-index: 4;
@@ -142,8 +142,88 @@
             margin-left: 10px;
         }
         section{
+            
+        }
+        .slider{
+        }
+        .slide1{
+            border: 1px solid black;
+            background: url("http://placehold.it/1200x800") no-repeat center center;
+            width: 100%;
+            height: 800px;
+        }
+        .slide2{
+            border: 1px solid black;
+            background: url("http://placehold.it/1200x800") no-repeat center center;
+            width: 100%;
+            height: 800px;
+        }
+        .slide3{
+            border: 1px solid black;
+            background: url("http://placehold.it/1200x800") no-repeat center center;
+            width: 100%;
+            height: 800px;
+        }
+        .slide4{
+            border: 1px solid black;
+            background: url("http://placehold.it/1200x800") no-repeat center center;
+            width: 100%;
+            height: 800px;
+        }
+        .slide5{
+            border: 1px solid black;
+            background: url("http://placehold.it/1200x800") no-repeat center center / cover ;
+            width: 100%;
+            height: 800px;
+        }
+        .slider figure div{
+            width: 20%;
+            float: left;
+            border: 1px solid red;
+        }
+        .slider figure{
+            width: 500%;
+            height: 800px;
+            overflow: hidden;
+            position: relative;
+            left: 0;
+            animation: slide 15s infinite;
+        }
+        @keyframes slide{
+            0% { left: 0%; }
+            20% { left: 0%; }
+            25% { left: -100%; }
+            45% { left: -100%; }
+            50% { left: -200%; }
+            70% { left: -200%; }
+            75% { left: -300%; }
+            95% { left: -300%; }
+            100% { left: -400%; }
+        }
+        .slideText{
             clear: both;
-            margin-top: 80px;
+            border: 1px solid gray;
+            width: 100%;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            white-space: nowrap;
+            position: relative;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .button{
+            clear: both;
+            border: 1px solid gray;
+            width: 100px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            position: relative;
+            top: 620px;
+            left: 50%;
+            transform: translateX(-50%);
         }
     </style>
 </head>
@@ -220,7 +300,31 @@
         </div>
     </header>
     <section>
-        <img src="images/eco.jpg">
+        <div class="slider">
+        <figure>
+            <div class="slide1">
+                <div class="slideText">자연과 함께 맛으로 행복한 세상 <b>오뚜기</b></div>
+                <div class="button">1</div>
+            </div>
+            <div class="slide2">
+                <div class="slideText">시원하게 즐기는 진하고 고소한 <b>콩국수 라면</b></div>
+                <div class="button">2</div>
+            </div>
+            <div class="slide3">
+                <div class="slideText">집에서도 냉면 전문점처럼 <b>함흥비빔면</b></div>
+                <div class="button">3</div>
+            </div>
+            <div class="slide4">
+                <div class="slideText">자연과 함께 맛으로 행복한 세상</div>
+                <div class="button">4</div>
+            </div>
+            <div class="slide5">
+                <div class="slideText">자연과 함께 맛으로 행복한 세상</div>
+                <div class="button">5</div>
+            </div>
+        </figure>
+        
+        </div>
     </section>
 </body>
 </html>
