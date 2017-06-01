@@ -28,7 +28,7 @@
         }
         .wrap{
             margin: 0 auto;
-            max-width: 1200px;
+            width: 1200px;
             height: inherit;
             display: flex;
             justify-content: space-around;
@@ -141,45 +141,54 @@
             padding: 5px;
             margin-left: 10px;
         }
-        section{
+        .slider{
+            background: url(images/20170530.jpg) no-repeat fixed center top / cover;
+            width: 100%;
+            height: 800px;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .slider:before{
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: inherit;
+            z-index: -1;
+            filter: blur(2px);
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -o-filter: blur(2px);
+            -ms-filter: blur(2px);
             
         }
-        .slider{
-        }
         .slide1{
-            border: 1px solid black;
             background: url("http://placehold.it/1200x800") no-repeat center center;
             width: 100%;
             height: 800px;
         }
         .slide2{
-            border: 1px solid black;
             background: url("http://placehold.it/1200x800") no-repeat center center;
             width: 100%;
             height: 800px;
         }
         .slide3{
-            border: 1px solid black;
             background: url("http://placehold.it/1200x800") no-repeat center center;
             width: 100%;
             height: 800px;
         }
         .slide4{
-            border: 1px solid black;
             background: url("http://placehold.it/1200x800") no-repeat center center;
             width: 100%;
             height: 800px;
         }
         .slide5{
-            border: 1px solid black;
-            background: url("http://placehold.it/1200x800") no-repeat center center / cover ;
-            width: 100%;
-            height: 800px;
+            background: url("http://placehold.it/1200x800") no-repeat center center / cover;
         }
-        .slider figure div{
+        .slider figure > div{
             width: 20%;
+            height: 800px;
             float: left;
-            border: 1px solid red;
         }
         .slider figure{
             width: 500%;
@@ -201,9 +210,8 @@
             100% { left: -400%; }
         }
         .slideText{
-            clear: both;
             border: 1px solid gray;
-            width: 100%;
+            width: 1200px;
             height: 80px;
             line-height: 80px;
             text-align: center;
@@ -214,16 +222,85 @@
             transform: translateX(-50%);
         }
         .button{
-            clear: both;
             border: 1px solid gray;
             width: 100px;
             height: 80px;
             line-height: 80px;
             text-align: center;
             position: relative;
-            top: 620px;
+            top: 520px;
             left: 50%;
             transform: translateX(-50%);
+        }
+        .block{
+            border: 1px solid green;
+            width: 1200px;
+            height: 300px;
+            margin: -30px auto;
+            margin-bottom: 0;
+        }
+        .wall{
+            clear: both;
+            border: 1px solid green;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+        }
+        .wall div{
+            border: 1px solid gold;
+            width: 100px;
+            height: 100px;
+            font-size: 80px;
+            text-align: center;
+            line-height: 100px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        .comp1{
+            animation: wander01 linear 7s;
+            animation-iteration-count: infinite;
+            transform-origin: 50% 50%;
+            animation-direction: alternate; 
+        }
+        @keyframes wander01{
+            0%{transform: translate(475px, 32px) rotate(0deg);}
+            100%{transform: translate(475px, 550px) rotate(180deg);}
+        }
+        .comp2{
+            animation: wander02 linear 9s;
+            animation-iteration-count: infinite;
+            transform-origin: 50% 50%;
+            animation-direction: alternate; 
+        }
+        @keyframes wander02{
+            0%{transform: translate(100px, 40px) rotate(0deg);}
+            100%{transform: translate(100px, 200px) rotate(180deg);}
+        }
+        .comp3{
+            animation: wander03 linear 9s;
+            animation-iteration-count: infinite;
+            transform-origin: 50% 50%;
+            animation-direction: alternate; 
+        }
+        @keyframes wander03{
+            0%{transform: translate(1430px, 300px) rotate(0deg);}
+            100%{transform: translate(1430px, 500px) rotate(180deg);}
+        }
+        #firstFloor{
+            border: 1px solid gold;
+            position: relative;
+            width: 100%;
+            height: 762px;
+            margin-top: 242px;
+        }
+        .gradient{
+            margin: 0 auto; 
+            background: linear-gradient(45deg,#ff4f58 0,#ff4f58 57%,#fd7048 100%);
+            width: 50%;
+            height: 70%;
         }
     </style>
 </head>
@@ -299,7 +376,7 @@
             </div>
         </div>
     </header>
-    <section>
+    <section id="main">
         <div class="slider">
         <figure>
             <div class="slide1">
@@ -323,8 +400,18 @@
                 <div class="button">5</div>
             </div>
         </figure>
-        
         </div>
+        <div class="block">
+            
+        </div>
+    </section>
+    <div class="wall">
+        <div class="comp1"><i class="fa fa-child" aria-hidden="true"></i></div>
+        <div class="comp2"><i class="fa fa-birthday-cake" aria-hidden="true"></i></div>
+        <div class="comp3"><i class="fa fa-bug" aria-hidden="true"></i></div>
+    </div>
+    <section id="firstFloor">
+        <div class="gradient"></div>
     </section>
 </body>
 </html>
