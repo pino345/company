@@ -300,17 +300,31 @@
         #firstFloor{
             border: 1px solid gold;
             background: white;
-            height: 300px;
-            
+            height: 500px;
         }
-        #firstFloor div:first-child{
-            margin-left: 27%;
+        #firstFloor p{
+            border: 1px solid black;
+            width: 200px;
+            height: 50px;
+            margin: 30px auto;
+            margin-bottom: -45px;
+        }
+        .aaa{
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .gradient{
+            margin: 0 20px;
             float: left;
             background: linear-gradient(45deg,#ff4f58 0,#ff4f58 57%,#fd7048 100%);
             width: 300px;
             height: 300px;
+        }
+        #secondFloor{
+            background: url(images/b.jpg) no-repeat center center;
+            height: 500px;
         }
     </style>
 </head>
@@ -426,9 +440,15 @@
         <div class="comp3"><i class="fa fa-bug" aria-hidden="true"></i></div>
     </div>
     <section id="firstFloor">
+        <p></p>
+        <div class="aaa">
         <div class="gradient"></div>
         <div class="gradient"></div>
         <div class="gradient"></div>
+        </div>
+    </section>
+    <section id="secondFloor">
+        <div></div>
     </section>
 </body>
 </html>
