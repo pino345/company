@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>오뚜기몰</title>
+    <link rel="shortcut icon" href="images/logo.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <style>
+        *{margin: 0; padding: 0;}
+        li{list-style: none;}
+        a{text-decoration: none; color: black}
+        input[type="checkbox"]{display: none;}
+        label{cursor: pointer;}
+        
+        header{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .gnb{
+            height: 25px;
+        }
+        .gnb li{
+            padding-right: 7px;
+            padding-left: 7px;
+            margin-top: 5px;
+        }
+        .gnb label{
+            float: left;
+            width: 110px;
+        }
+        .gnb img{
+            position: absolute;
+            z-index: 10;
+            border: 1px solid darkgray;
+            overflow: hidden;
+            opacity: 0;
+            transform: scale(1) translate(-54.5%, 22%);
+            transition: all .5s ease-in-out;
+        }
+        .gnb input:checked ~ img {
+            overflow: visible;
+            opacity: 1;
+            transform: scale(1.5) translate(-18%, 31%);
+        }
+        .gnb-right{
+            float: right;
+            width: 410px;
+        }
+        .gnb-right li{
+            float: left;
+            border-right: 1px solid lightgray;
+        }
+        .gnb-right li:last-child{
+            border-right: none;
+            padding-right: 0;
+        }
+        .common-header{
+            width: 1200px;
+            height: 80px;
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .top-logo{
+            background: url(images/logo-mall.gif) no-repeat center center;
+            display: block;
+            width: 170px;
+            height: 64px;
+            margin-left: -10px;
+            margin-right: 10px;
+        }
+        input[type="search"]{
+            border: 1px solid #ec8139;
+            display: block;
+            width: 500px;
+            height: 50px;
+        }
+        .fa-search{
+            background-color: #ec8139;
+            color: white;
+            z-index: 10;
+            margin-left: -49px;
+            width: 48px;
+            height: 48px;
+            font-size: 34px;
+            text-align: center;
+            line-height: 48px;
+        }
+        #top-navi{
+            border: 1px solid gold;
+            height: 70px;
+        }
+        .menu-open-button{
+            border: 1px solid red;
+            background: gold;
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            color: #fff;
+            text-align: center;
+            line-height: 70px;
+            transform: translate(0,0);
+            transition: transform ease-out 0.2s;
+        }
+        .menu-open{
+            display: none;
+        }
+        .lines{
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -1.5px;
+            margin-left: -12.5px;
+            transition: transform ease-out 0.2s;
+        }
+        .line-1{
+            transform: translate(0,-8px);
+        }
+        .line-2{
+            transform: translate(0,0);
+        }
+        .line-3{
+            transform: translate(0,8px);
+        }
+        .menu-open:checked ~ .menu-open-button .line-1{
+            transform: translate(0,0) rotate(45deg); 
+        }
+        .menu-open:checked ~ .menu-open-button .line-2{
+            transform: translate(0,0) scale(.1,1); 
+        }
+        .menu-open:checked ~ .menu-open-button .line-3{
+            transform: translate(0,0) rotate(-45deg); 
+        }
+        #top-navi span:last-child{
+            display: block;
+            width: 120px;
+            border-right: 1px solid gold;
+            margin-left: 70px;
+            color: black;
+        }
+        .allCategory{
+            overflow: hidden;
+            height: 0;
+            position: absolute;
+            top: 200px;
+        }
+        #top-navi input:checked ~ .allCategory{
+            overflow: visible;
+            height: 515px;
+        }
+        .depth1{
+            border: 1px solid gold;
+            width: 1000px;
+            height: 515px;
+            margin-left: -1px;
+        }
+        .depth1 > li{
+            float: left;
+            width: 200px;
+            text-align: center;
+            margin: 5px 0;
+        }
+        .depth1 > li:nth-child(1), .depth1 > li:nth-child(2), .depth1 > li:nth-child(3), .depth1 > li:nth-child(4), .depth1 > li:nth-child(5){
+            margin-top: 0;
+        }
+        .depth1 > li:nth-child(11){
+            clear: both;
+        }
+        .depth1 > li > a{
+            background-color: gold;
+            display: block;
+            width: 100%;
+            height: 25px;
+            line-height: 25px;
+        }
+        #top-navi > ul{
+            
+        }
+        #top-navi > ul li{
+            float: left;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="gnb">
+            <input id="gnb-left" type="checkbox">
+            <label for="gnb-left">앱다운로드<i class="fa fa-caret-down" aria-hidden="true"></i></label>
+            <img src="images/app.png">
+            <ul class="gnb-right">
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">장바구니</a></li>
+                <li><a href="#">주문배송조회</a></li>
+                <li><a href="#">고객센터</a></li>
+            </ul>
+        </div>
+        <div class="common-header">
+            <a href="#" class="top-logo"></a>
+            <input type="search" placeholder="찾으시는 상품을 입력해주세요"><i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+        <nav id="top-navi">
+            <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+            <label class="menu-open-button" for="menu-open">
+                <span class="lines line-1"></span>
+                <span class="lines line-2"></span>
+                <span class="lines line-3"></span>
+                <span>전체 카테고리</span>
+            </label>
+            <div class="allCategory">
+                <ul class="depth1">
+                    <li><a href="#">밥</a>
+                        <ul class="depth2">
+                            <li><a href="#">씻어나온 쌀</a></li>
+                            <li><a href="#">오뚜기 컵밥</a></li>
+                            <li><a href="#">오뚜기 밥</a></li>
+                            <li><a href="#">누룽지</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">3분요리</a>
+                        <ul class="depth2">
+                            <li><a href="#">3분 카레/짜장</a></li>
+                            <li><a href="#">3분 소스/기타</a></li>
+                            <li><a href="#">죽류</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">간편조리식품/프리믹스</a>
+                        <ul class="depth2">
+                            <li><a href="#">즉석국</a></li>
+                            <li><a href="#">국/탕/찌개류</a></li>
+                            <li><a href="#">밥친구</a></li>
+                            <li><a href="#">카레/짜장</a></li>
+                            <li><a href="#">스프/죽</a></li>
+                            <li><a href="#">프리믹스</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">라면</a>
+                        <ul class="depth2">
+                            <li><a href="#">봉지면</a></li>
+                            <li><a href="#">용기면</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">전통식품</a>
+                        <ul class="depth2">
+                            <li><a href="#">국수/당면</a></li>
+                            <li><a href="#">미역/다시마</a></li>
+                            <li><a href="#">벌꿀</a></li>
+                            <li><a href="#">올리고당/물엿/쌀엿</a></li>
+                            <li><a href="#">볶음참깨</a></li>
+                            <li><a href="#">고추장/비빔장</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">참기름/식용유/식초</a>
+                        <ul class="depth2">
+                            <li><a href="#">참기름</a></li>
+                            <li><a href="#">식용유</a></li>
+                            <li><a href="#">고급유</a></li>
+                            <li><a href="#">식초</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">소스/드레싱/향신료</a>
+                        <ul class="depth2">
+                            <li><a href="#">케챺/마요네스</a></li>
+                            <li><a href="#">소스/시럽류</a></li>
+                            <li><a href="#">드레싱류</a></li>
+                            <li><a href="#">간장류</a></li>
+                            <li><a href="#">국수장국</a></li>
+                            <li><a href="#">향신료</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">통조림(캔)/수입제품</a>
+                        <ul class="depth2">
+                            <li><a href="#">참치/꽁치</a></li>
+                            <li><a href="#">햄</a></li>
+                            <li><a href="#">스위트콘/황도</a></li>
+                            <li><a href="#">이금기</a></li>
+                            <li><a href="#">타바스코</a></li>
+                            <li><a href="#">파스타</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">차/음료</a>
+                        <ul class="depth2">
+                            <li><a href="#">액상차</a></li>
+                            <li><a href="#">분말차</a></li>
+                            <li><a href="#">침출차(티백)</a></li>
+                            <li><a href="#">분말(자판용)</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">간식/쨈</a>
+                        <ul class="depth2">
+                            <li><a href="#">뿌셔뿌셔</a></li>
+                            <li><a href="#">컵스프</a></li>
+                            <li><a href="#">쨈류</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">건강식품</a>
+                        <ul class="depth2">
+                            <li><a href="#">건강기능식품</a></li>
+                            <li><a href="#">일반식품</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">식자재</a>
+                        <ul class="depth2">
+                            <li><a href="#">카레/짜장/스프</a></li>
+                            <li><a href="#">케챺/마요네스</a></li>
+                            <li><a href="#">육류소스/양념장</a></li>
+                            <li><a href="#">참치/스위트콘</a></li>
+                            <li><a href="#">식초/미향</a></li>
+                            <li><a href="#">참기름/고추맛기름</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">선물세트</a>
+                        <ul class="depth2">
+                            <li><a href="#">특선</a></li>
+                            <li><a href="#">참기름</a></li>
+                            <li><a href="#">참치</a></li>
+                            <li><a href="#">특선고급유</a></li>
+                            <li><a href="#">캔햄</a></li>
+                            <li><a href="#">오뚜기차</a></li>
+                            <li><a href="#">건강식품</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <ul>
+                <li><a href="#">신제품</a></li>
+                <li><a href="#">인기제품</a></li>
+                <li><a href="#">출석체크</a></li>
+                <li><a href="#">이벤트/기획전</a></li>
+                <li><a href="#">오뚜기 요리</a></li>
+            </ul>
+        </nav> 
+    </header>
+</body>
+</html>
