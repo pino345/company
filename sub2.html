@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>오뚜기몰</title>
@@ -103,9 +103,6 @@
             transform: translate(0,0);
             transition: transform ease-out 0.2s;
         }
-        .menu-open{
-            display: none;
-        }
         .lines{
             width: 25px;
             height: 3px;
@@ -147,7 +144,7 @@
             overflow: hidden;
             height: 0;
             position: absolute;
-            top: 200px;
+            top: 192px;
         }
         #top-navi input:checked ~ .allCategory{
             overflow: visible;
@@ -179,11 +176,23 @@
             line-height: 25px;
         }
         #top-navi > ul{
-            
+            width: 1000px;
+            height: 70px;
+            float: right;
         }
         #top-navi > ul li{
             float: left;
-            padding: 0 10px;
+            width: 199px;
+            text-align: center;
+            height: 70px;
+            line-height: 70px;
+            border-right:1px solid gold;
+        }
+        #top-navi > ul li:first-child{
+            border-left: 0;
+        }
+        #top-navi > ul li:last-child{
+            border-right: 0;
         }
     </style>
 </head>
