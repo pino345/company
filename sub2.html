@@ -18,41 +18,41 @@
         }
         .gnb{
             height: 25px;
-        }
-        .gnb li{
-            padding-right: 7px;
-            padding-left: 7px;
-            margin-top: 5px;
+            font-size: 14px;
         }
         .gnb label{
             float: left;
-            width: 110px;
+            width: 90px;
+            text-align: center;
+            margin-top: 5px;
         }
         .gnb img{
             position: absolute;
             z-index: 10;
             border: 1px solid darkgray;
             overflow: hidden;
-            opacity: 0;
-            transform: scale(1) translate(-54.5%, 22%);
+            height: 0;
+            transform: translate(-90px, 25px) rotate(0deg) scale(0);
             transition: all .5s ease-in-out;
         }
         .gnb input:checked ~ img {
             overflow: visible;
-            opacity: 1;
-            transform: scale(1.5) translate(-18%, 31%);
+            height: 300px;
+            transform: translate(-90px, 25px) rotate(360deg) scale(1);
         }
         .gnb-right{
             float: right;
-            width: 410px;
+            width: 368px;
         }
         .gnb-right li{
             float: left;
+            padding-right: 7px;
+            padding-left: 7px;
+            margin-top: 5px;
             border-right: 1px solid lightgray;
         }
         .gnb-right li:last-child{
             border-right: none;
-            padding-right: 0;
         }
         .common-header{
             width: 1200px;
@@ -71,12 +71,14 @@
             margin-right: 10px;
         }
         input[type="search"]{
-            border: 1px solid #ec8139;
+            border: 3px solid #ec8139;
             display: block;
             width: 500px;
             height: 50px;
+            padding-left: 10px;
         }
         .fa-search{
+            cursor: pointer;
             background-color: #ec8139;
             color: white;
             z-index: 10;
@@ -90,9 +92,9 @@
         #top-navi{
             border: 1px solid gold;
             height: 70px;
+            margin-top: 10px;
         }
         .menu-open-button{
-            border: 1px solid red;
             background: gold;
             width: 70px;
             height: 70px;
@@ -136,25 +138,40 @@
         #top-navi span:last-child{
             display: block;
             width: 120px;
-            border-right: 1px solid gold;
             margin-left: 70px;
             color: black;
         }
         .allCategory{
+            border: 1px solid gold;
+            border-right: 0;
+            margin-left: -1px;
+        }
+        .cat-image{
+            border: 1px solid gold;
+            border-left: 0;
+            width: 198px;
+            height: 515px;
+            margin-left: 1000px;
+        }
+        .allCategory, .cat-image{
+            z-index: 10;
+            background: white;
             overflow: hidden;
             height: 0;
+            opacity: 0;
             position: absolute;
-            top: 192px;
+            top: 203px;
+            transition: all .3s ease-in-out;
         }
-        #top-navi input:checked ~ .allCategory{
+        #top-navi input:checked ~ .allCategory, #top-navi input:checked ~ .cat-image, #top-navi input:checked ~ .allCategory .depth1{
             overflow: visible;
             height: 515px;
+            opacity: 1;
         }
         .depth1{
-            border: 1px solid gold;
             width: 1000px;
-            height: 515px;
-            margin-left: -1px;
+            height: 0px;
+            overflow: hidden;
         }
         .depth1 > li{
             float: left;
@@ -169,7 +186,7 @@
             clear: both;
         }
         .depth1 > li > a{
-            background-color: gold;
+            color: #89BB00;
             display: block;
             width: 100%;
             height: 25px;
@@ -186,13 +203,161 @@
             text-align: center;
             height: 70px;
             line-height: 70px;
-            border-right:1px solid gold;
-        }
-        #top-navi > ul li:first-child{
-            border-left: 0;
+            border-left:1px solid gold;
         }
         #top-navi > ul li:last-child{
             border-right: 0;
+        }
+        .stroke{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 200px;
+            border: 2px solid gold;
+        }
+        #main{
+            clear: both;
+            height: 500px;
+            margin-top: 2px;
+            border-bottom: 1px solid gray;
+        }
+        #mainContent{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .mainMenu{
+            position: absolute;
+            width: 180px;
+            height: 500px;
+            background-color: rgba(213,213,213,.4);
+            padding-left: 5px;
+        }
+        .mainMenu > li{
+            height: 37px;
+            line-height: 37px;
+            border-bottom: 1px solid white;
+        }
+        .mainMenu > li:last-child{
+            border: 0;
+        }
+        .mainMenu li a{
+            display: block;
+            width: 180px;
+            height: 37px;
+        }
+        div[class|="main-wrap"]{
+            position: absolute;
+            left: 180px;
+            top: 0;
+            width: 180px;
+            height: 498px;
+            border: 1px solid darkgray;
+            background-color: white;
+            padding-left: 15px;
+        }
+        .mainMenu > li:nth-child(1) a ~ div[class$="1"],
+        .mainMenu > li:nth-child(2) a ~ div[class$="2"],
+        .mainMenu > li:nth-child(3) a ~ div[class$="3"],
+        .mainMenu > li:nth-child(4) a ~ div[class$="4"],
+        .mainMenu > li:nth-child(5) a ~ div[class$="5"],
+        .mainMenu > li:nth-child(6) a ~ div[class$="6"],
+        .mainMenu > li:nth-child(7) a ~ div[class$="7"],
+        .mainMenu > li:nth-child(8) a ~ div[class$="8"],
+        .mainMenu > li:nth-child(9) a ~ div[class$="9"],
+        .mainMenu > li:nth-child(10) a ~ div[class$="10"],
+        .mainMenu > li:nth-child(11) a ~ div[class$="11"],
+        .mainMenu > li:nth-child(12) a ~ div[class$="12"],
+        .mainMenu > li:nth-child(13) a ~ div[class$="13"]{
+            overflow: hidden;
+            height: 0;
+            opacity: 0;
+        }
+        .mainMenu > li:nth-child(1):hover div[class$="1"],
+        .mainMenu > li:nth-child(2):hover div[class$="2"],
+        .mainMenu > li:nth-child(3):hover div[class$="3"],
+        .mainMenu > li:nth-child(4):hover div[class$="4"],
+        .mainMenu > li:nth-child(5):hover div[class$="5"],
+        .mainMenu > li:nth-child(6):hover div[class$="6"],
+        .mainMenu > li:nth-child(7):hover div[class$="7"],
+        .mainMenu > li:nth-child(8):hover div[class$="8"],
+        .mainMenu > li:nth-child(9):hover div[class$="9"],
+        .mainMenu > li:nth-child(10):hover div[class$="10"],
+        .mainMenu > li:nth-child(11):hover div[class$="11"],
+        .mainMenu > li:nth-child(12):hover div[class$="12"],
+        .mainMenu > li:nth-child(13):hover  div[class$="13"]{
+            overflow: visible;
+            height: 498px;
+            opacity: 1;
+        } 
+        /*.mainbanner{
+            float: right;
+        }
+        .bg1{
+            width: 900px;
+            height: 500px;
+            margin: 0 auto;
+            background: url("http://placehold.it/900x500") no-repeat center center;
+        }*/
+        .ss{
+            width: 100%;
+            height: 500px;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .slider{
+            width: 500%;
+            height: 800px;
+            position: relative;
+            left: 0;
+            animation: slide 20s infinite;
+        }
+        @keyframes slide{
+            0% { left: 0%; }
+            20% { left: 0%; }
+            25% { left: -100%; }
+            45% { left: -100%; }
+            50% { left: -200%; }
+            70% { left: -200%; }
+            75% { left: -300%; }
+            95% { left: -300%; }
+            100% { left: -400%; }
+        }
+        .slider > div{
+            width: 20%;
+            height: 600px;
+            float: left;
+            margin-top: 140px;
+        }
+        .slide1{
+            background: url("http://placehold.it/900x500") no-repeat center center;
+            
+        }
+        .slide2{
+            background: url("http://placehold.it/900x500") no-repeat center center;
+        }
+        .slide3{
+            background: url("http://placehold.it/900x500") no-repeat center center;
+            width: 1200px;
+            height: 600px;
+        }
+        .slide4{
+            background: url("http://placehold.it/900x500") no-repeat center center;
+        }
+        .slide5{
+            background: url("http://placehold.it/900x500") no-repeat center center;
+        }
+        .slideText{
+            border: 1px solid gray;
+            width: 1200px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            white-space: nowrap;
+            position: relative;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
         }
     </style>
 </head>
@@ -201,7 +366,7 @@
         <div class="gnb">
             <input id="gnb-left" type="checkbox">
             <label for="gnb-left">앱다운로드<i class="fa fa-caret-down" aria-hidden="true"></i></label>
-            <img src="images/app.png">
+            <img src="images/qrcode.png">
             <ul class="gnb-right">
                 <li><a href="#">로그인</a></li>
                 <li><a href="#">회원가입</a></li>
@@ -337,14 +502,182 @@
                     </li>
                 </ul>
             </div>
+            <div class="cat-image">
+                
+            </div>
             <ul>
                 <li><a href="#">신제품</a></li>
                 <li><a href="#">인기제품</a></li>
-                <li><a href="#">출석체크</a></li>
                 <li><a href="#">이벤트/기획전</a></li>
                 <li><a href="#">오뚜기 요리</a></li>
+                <li><a href="#">커뮤니티</a></li>
             </ul>
+            <div class="stroke"></div>
         </nav> 
     </header>
+    <section id="main">
+        <article id="mainContent">
+             <ul class="mainMenu">
+                <li><a href="#">밥</a>
+                        <div class="main-wrap-1">
+                            <ul class="main-depth2">
+                                <li><a href="#">씻어나온 쌀</a></li>
+                                <li><a href="#">오뚜기 컵밥</a></li>
+                                <li><a href="#">오뚜기 밥</a></li>
+                                <li><a href="#">누룽지</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">3분요리</a>
+                        <div class="main-wrap-2">
+                            <ul class="main-depth2">
+                                <li><a href="#">3분 카레/짜장</a></li>
+                                <li><a href="#">3분 소스/기타</a></li>
+                                <li><a href="#">죽류</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">간편조리식품/프리믹스</a>
+                        <div class="main-wrap-3">
+                            <ul class="main-depth2">
+                                <li><a href="#">즉석국</a></li>
+                                <li><a href="#">국/탕/찌개류</a></li>
+                                <li><a href="#">밥친구</a></li>
+                                <li><a href="#">카레/짜장</a></li>
+                                <li><a href="#">스프/죽</a></li>
+                                <li><a href="#">프리믹스</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">라면</a>
+                       <div class="main-wrap-4"> 
+                           <ul class="main-depth2">
+                                <li><a href="#">봉지면</a></li>
+                                <li><a href="#">용기면</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">전통식품</a>
+                        <div class="main-wrap-5">
+                            <ul class="main-depth2">
+                                <li><a href="#">국수/당면</a></li>
+                                <li><a href="#">미역/다시마</a></li>
+                                <li><a href="#">벌꿀</a></li>
+                                <li><a href="#">올리고당/물엿/쌀엿</a></li>
+                                <li><a href="#">볶음참깨</a></li>
+                                <li><a href="#">고추장/비빔장</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">참기름/식용유/식초</a>
+                        <div class="main-wrap-6">
+                            <ul class="main-depth2">
+                                <li><a href="#">참기름</a></li>
+                                <li><a href="#">식용유</a></li>
+                                <li><a href="#">고급유</a></li>
+                                <li><a href="#">식초</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">소스/드레싱/향신료</a>
+                        <div class="main-wrap-7">
+                            <ul class="main-depth2">
+                                <li><a href="#">케챺/마요네스</a></li>
+                                <li><a href="#">소스/시럽류</a></li>
+                                <li><a href="#">드레싱류</a></li>
+                                <li><a href="#">간장류</a></li>
+                                <li><a href="#">국수장국</a></li>
+                                <li><a href="#">향신료</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">통조림(캔)/수입제품</a>
+                        <div class="main-wrap-8">
+                            <ul class="main-depth2">
+                                <li><a href="#">참치/꽁치</a></li>
+                                <li><a href="#">햄</a></li>
+                                <li><a href="#">스위트콘/황도</a></li>
+                                <li><a href="#">이금기</a></li>
+                                <li><a href="#">타바스코</a></li>
+                                <li><a href="#">파스타</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">차/음료</a>
+                        <div class="main-wrap-9">
+                            <ul class="main-depth2">
+                                <li><a href="#">액상차</a></li>
+                                <li><a href="#">분말차</a></li>
+                                <li><a href="#">침출차(티백)</a></li>
+                                <li><a href="#">분말(자판용)</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">간식/쨈</a>
+                        <div class="main-wrap-10">
+                            <ul class="main-depth2">
+                                <li><a href="#">뿌셔뿌셔</a></li>
+                                <li><a href="#">컵스프</a></li>
+                                <li><a href="#">쨈류</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">건강식품</a>
+                        <div class="main-wrap-11">
+                            <ul class="main-depth2">
+                                <li><a href="#">건강기능식품</a></li>
+                                <li><a href="#">일반식품</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">식자재</a>
+                        <div class="main-wrap-12">
+                            <ul class="main-depth2">
+                                <li><a href="#">카레/짜장/스프</a></li>
+                                <li><a href="#">케챺/마요네스</a></li>
+                                <li><a href="#">육류소스/양념장</a></li>
+                                <li><a href="#">참치/스위트콘</a></li>
+                                <li><a href="#">식초/미향</a></li>
+                                <li><a href="#">참기름/고추맛기름</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">선물세트</a>
+                        <div class="main-wrap-13">
+                            <ul class="main-depth2">
+                                <li><a href="#">특선</a></li>
+                                <li><a href="#">참기름</a></li>
+                                <li><a href="#">참치</a></li>
+                                <li><a href="#">특선고급유</a></li>
+                                <li><a href="#">캔햄</a></li>
+                                <li><a href="#">오뚜기차</a></li>
+                                <li><a href="#">건강식품</a></li>
+                            </ul>
+                        </div>
+                    </li>
+            </ul>
+            <!--<ul class="mainbanner">
+                <li>
+                    <a href="#">
+                        <div class="banner bg1"></div>
+                    </a>
+                </li>
+            </ul>-->
+            <div class="ss">
+                <aside class="slider">
+                    <div class= "slide1">
+                    </div>
+                    <div class="slide2">
+                    </div>
+                    <div class="slide3">
+                    </div>
+                    <div class="slide4">
+                    </div>
+                    <div class="slide5">
+                    </div>
+                </aside>
+            </div>
+        </article>
+    </section>
 </body>
 </html>
