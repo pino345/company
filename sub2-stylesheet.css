@@ -260,8 +260,8 @@ div[class|="main-wrap"] {
 
 .between{
     display: block;
-    width: 114px;
-    height: 48px;
+    width: 115px;
+    height: 50px;
     background-color: beige;
     position: absolute;
     z-index: 4;
@@ -316,7 +316,7 @@ div[class|= "bannerWrap"] .banner{
     overflow: hidden;
 }
 .bg1 {
-    background: url("images/18813603_1228659897245303_7244428012181266183_n.jpg") no-repeat center 95%/ cover;
+    background: url("images/0111_00000000178_ii_on_9_1.png") no-repeat center center;
 }
 .bg2 {
     background: url("images/0111_00000000178_ii_on_12_1.png") no-repeat center center;
@@ -346,7 +346,8 @@ div[class|= "bannerWrap"] .banner{
     overflow: hidden;
 }
 .mainbanner ul > li:nth-child(1):hover div[class~= "layer1"]{
-    background: url(images/18813603_1228659897245303_7244428012181266183_n.jpg) no-repeat center center / cover;
+    background-color: #FFF6CB;
+    z-index: -1;
 }
 .mainbanner ul > li:nth-child(2):hover div[class~= "layer2"]{
     background-color: #FFE58D;
@@ -365,39 +366,26 @@ div[class|= "bannerWrap"] .banner{
     z-index: -1;
 }
 .lineEft{
-    width: 178px;
-    height: 2px;
+    width: 180px;
+    height: 3px;
     background-color: forestgreen;
+    position: absolute;
+    margin-top: 447px;
+    opacity: 0;
     z-index: 10;
     transition: 0.5s ease-in-out;
-}.long1{
-    position: absolute;
-    margin-top: 450px;
-    opacity: 0;
 }
 .long2{
-    position: absolute;
-    margin-top: 450px;
-    margin-left: 180px;
-    opacity: 0;
+    margin-left: 179px;
 }
 .long3{
-    position: absolute;
-    margin-top: 450px;
-    margin-left: 359px;
-    opacity: 0;
+    margin-left: 358px;
 }
 .long4{
-    position: absolute;
-    margin-top: 450px;
-    margin-left: 538px;
-    opacity: 0;
+    margin-left: 537px;
 }
 .long5{
-    position: absolute;
-    margin-top: 450px;
-    margin-left: 717px;
-    opacity: 0;
+    margin-left: 716px;
 }
 .mainbanner ul > li:nth-child(1):hover div[class$="long1"], .mainbanner ul > li:nth-child(2):hover div[class$="long2"], .mainbanner ul > li:nth-child(3):hover div[class$="long3"], .mainbanner ul > li:nth-child(4):hover div[class$="long4"], .mainbanner ul > li:nth-child(5):hover div[class$="long5"]{
     animation: long .5s ease-in-out;
@@ -444,6 +432,36 @@ div[class|= "bannerWrap"] .banner{
     float: left;
     margin: 10px;
     position: relative;
+}
+.new{
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    background: url(images/new-product-sticker.png) no-repeat center center / contain;
+    margin: 10px;
+    color: rgba(255,255,255,0.1);
+    overflow: hidden;
+}
+.shimmer{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(top, #fff, #e5e5e5);
+  background: -webkit-linear-gradient(top, #fff, #e5e5e5);
+  background: -moz-linear-gradient(top, #fff, #e5e5e5);
+  -moz-animation: shimmery 2s infinite;
+  -webkit-animation: shimmery 2s infinite;
+  animation: shimmery 2s infinite;
+}
+
+@keyframes shimmery{
+  0% {left: -400px; bottom: 0px; opacity:0; transform: rotate(0deg); filter:blur(50px);}
+  100%{left: 400px; bottom: -200px; opacity: 1; transform: rotate(60deg); filter:blur(50px);}
+  
 }
 #firstFloor ul li > a{
     display: block;
