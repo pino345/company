@@ -56,7 +56,7 @@ header {
     align-items: center;
 }
 .top-logo {
-    background: url(images/logo-mall.gif) no-repeat center center;
+    background: url("images/logo-mall.gif") no-repeat center center;
     display: block;
     width: 170px;
     height: 64px;
@@ -213,13 +213,10 @@ input[type="search"] {
 
 #main {
     clear: both;
-    height: 500px;
-    margin-top: 2px;
-    border-bottom: 1px solid gray;
-}
-#mainContent {
     width: 1200px;
     margin: 0 auto;
+    height: 500px;
+    margin-top: 2px;
 }
 .mainMenu {
     z-index: 5;
@@ -261,59 +258,114 @@ div[class|="main-wrap"] {
     opacity: 1;
 }
 
+.between{
+    display: block;
+    width: 114px;
+    height: 48px;
+    background-color: beige;
+    position: absolute;
+    z-index: 4;
+    margin-top: 450px;
+    margin-left: 185px;
+    text-align: center;
+    line-height: 48px;
+    font-size: 24px;
+}
+.between i{                                     
+    animation: gesture 1.5s ease-in-out infinite;
+}
+@keyframes gesture {
+    0%{margin-left: -5px;}
+    50%{margin-left: 5px;}
+    100%{margin-left: -5px;}
+}
+
 .mainbanner {
     width: 900px;
     height: 500px;
     float: right;
-    position: relative;
 }
 .mainbanner > ul > li span{
     display: block;
-    width: 180px;
-    height: 50px;
+    width: 178px;
+    height: 48px;
     float: left;
     margin-top: 450px;
     cursor: pointer;
+    font-size: 14px;
     text-align: center;
     line-height: 50px;
     background-color: beige;
+    border: 1px solid darkgray;
+    border-right: 0;
+}
+.mainbanner > ul > li:last-child span{
+    border-right: 1px solid darkgray;
 }
 .mainbanner > ul > li span:hover{
     background-color: darkorange;
 }
-.mainbanner ul > li:nth-child(1):hover div[class$="a"], .mainbanner ul > li:nth-child(2):hover div[class$="b"], .mainbanner ul > li:nth-child(3):hover div[class$="c"], .mainbanner ul > li:nth-child(4):hover div[class$="d"], .mainbanner ul > li:nth-child(5):hover div[class$="e"]{
+.mainbanner ul > li:nth-child(1):hover div[class$="bg1"], .mainbanner ul > li:nth-child(2):hover div[class$="bg2"], .mainbanner ul > li:nth-child(3):hover div[class$="bg3"], .mainbanner ul > li:nth-child(4):hover div[class$="bg4"], .mainbanner ul > li:nth-child(5):hover div[class$="bg5"]{
     z-index: 10;
+    display: block;
 }
-.mainbanner ul > li:nth-child(1):hover div[class$="a"]{
-    background-color: darkseagreen;
-    width: 100%;
-    left: 0;
-    right: 0;
-}
-div[class|="bannerWrap"]{
+div[class|= "bannerWrap"] .banner{
     position: absolute;
-}
-div[class|="bannerWrap"] div{
     width: 900px;
     height: 450px;
+    overflow: hidden;
 }
 .bg1 {
-    background: url("images/0111_00000000178_ii_on_9_1.png") no-repeat center center;
+    background: url("images/18813603_1228659897245303_7244428012181266183_n.jpg") no-repeat center 95%/ cover;
 }
 .bg2 {
     background: url("images/0111_00000000178_ii_on_12_1.png") no-repeat center center;
+    display: none;
 }
 .bg3 {
     background: url("images/0111_00000000178_ii_on_9_1.png") no-repeat center center;
+    display: none;
 }
 .bg4 {
     background: url("images/0111_00000000178_ii_on_12_1.png") no-repeat center center;
+    display: none;
 }
 .bg5 {
     background: url("images/0111_00000000178_ii_on_9_1.png") no-repeat center center;
+    display: none;
+}
+.bnBg{
+    clear: both;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -2;
+    width: 100%;
+    height: 500px;
+    background-color: #FFF6CB;
+    overflow: hidden;
+}
+.mainbanner ul > li:nth-child(1):hover div[class~= "layer1"]{
+    background: url(images/18813603_1228659897245303_7244428012181266183_n.jpg) no-repeat center center / cover;
+}
+.mainbanner ul > li:nth-child(2):hover div[class~= "layer2"]{
+    background-color: #FFE58D;
+    z-index: -1;
+}
+.mainbanner ul > li:nth-child(3):hover div[class~= "layer3"]{
+    background-color: #FFF6CB;
+    z-index: -1;
+}
+.mainbanner ul > li:nth-child(4):hover div[class~= "layer4"]{
+    background-color: #FFE58D;
+    z-index: -1;
+}
+.mainbanner ul > li:nth-child(5):hover div[class~= "layer5"]{
+    background-color: #FFF6CB;
+    z-index: -1;
 }
 .lineEft{
-    width: 180px;
+    width: 178px;
     height: 2px;
     background-color: forestgreen;
     z-index: 10;
@@ -332,19 +384,19 @@ div[class|="bannerWrap"] div{
 .long3{
     position: absolute;
     margin-top: 450px;
-    margin-left: 360px;
+    margin-left: 359px;
     opacity: 0;
 }
 .long4{
     position: absolute;
     margin-top: 450px;
-    margin-left: 540px;
+    margin-left: 538px;
     opacity: 0;
 }
 .long5{
     position: absolute;
     margin-top: 450px;
-    margin-left: 720px;
+    margin-left: 717px;
     opacity: 0;
 }
 .mainbanner ul > li:nth-child(1):hover div[class$="long1"], .mainbanner ul > li:nth-child(2):hover div[class$="long2"], .mainbanner ul > li:nth-child(3):hover div[class$="long3"], .mainbanner ul > li:nth-child(4):hover div[class$="long4"], .mainbanner ul > li:nth-child(5):hover div[class$="long5"]{
@@ -354,4 +406,144 @@ div[class|="bannerWrap"] div{
 @keyframes long{
     0%{width:0;}
     100%{width:180px;}
+}
+
+
+
+#firstFloor{
+    clear: both;
+    width: 1200px;
+    margin: 40px auto;
+}
+#firstFloor h3{
+    text-align: center;
+    font-size: 30px;
+}
+#firstFloor h3 b{
+    color: darkorange;
+}
+#firstFloor >a {
+    float: right;
+    display: block;
+    width: 90px;
+    text-align: center;
+    height: 28px;
+    line-height: 28px;
+    margin-right: 10px;
+    margin-top: -25px;
+    border: 1px solid black;
+    transition: all .3s ease-in-out;
+}
+#firstFloor ul{
+    width: 1200px;
+    margin-top: 10px;
+}
+#firstFloor ul li{
+    width: 280px;
+    height:360px;
+    float: left;
+    margin: 10px;
+    position: relative;
+}
+#firstFloor ul li > a{
+    display: block;
+    width: 280px;
+    height: 360px;
+    border: 1px solid darkgray;
+}
+div[class|="product"]{
+    width: 280px;
+    height: 280px;
+}
+div[class*= "dp1"]{
+    background: url(images/149690455138731_e.jpg) no-repeat center center / contain;
+}
+div[class*= "dp2"]{
+    background: url(images/148973813788109_e.jpg) no-repeat center center / contain;
+}
+div[class*= "dp3"]{
+    background: url(images/149136164944356_e.jpg) no-repeat center center / contain;
+}
+div[class*= "dp4"]{
+    background: url(images/149136182238833_e.jpg) no-repeat center center / contain;
+}
+#firstFloor span[class|= "pdt"]{
+    display: block;
+    text-align: center;
+    width: 280px;
+}
+.pdt-Name{
+    height: 40px;
+    line-height: 37px;
+    font-size: 18px;
+}
+.pdt-Price{
+    height: 40px;
+    font-size: 30px;
+    position: absolute;
+    bottom: 0;
+}
+small{
+    display: block;
+    margin-top: -8px;
+    margin-bottom: -58px;
+}
+#firstFloor ul li:hover > a{
+    border: 1px solid orange;
+}
+#firstFloor ul li a:hover:after{
+    z-index: -1;
+    opacity: 1;
+}
+#firstFloor ul li:hover .btn-on{
+    overflow: visible;
+    opacity: 1;
+    margin-top: -150px;
+}
+.btn-on:hover ~ #firstFloor ul li > a:after{
+    opacity: 1;
+    z-index: -1;
+}
+#firstFloor ul li > a:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 280px;
+    height: 85px;
+    background-color: orange;
+    transition: all .3s ease-in-out;
+    opacity: 0;
+}
+.btn-on{
+    margin-top: -100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0;
+    z-index: -1;
+    transition: all .3s ease-in-out;
+}
+.btn-on a{
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 0 5px; 
+    border-radius: 50%;
+    background-color: dimgrey;
+}
+.btn-on a span{
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 12px auto 0;
+}
+.btn-on a:nth-child(1) span{
+    background: url(images/search.png) no-repeat center center / contain;
+}
+.btn-on a:nth-child(2) span{
+    background: url(images/heart.png) no-repeat center center / contain;
+}
+.btn-on a:nth-child(3) span{
+    background: url(images/icon.png) no-repeat center center / contain;
 }
