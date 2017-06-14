@@ -694,6 +694,16 @@ div[class*= "Pd45"]{background: url(images/Pd45.jpg) no-repeat center center / c
 div[class*= "Pd46"]{background: url(images/Pd46.jpg) no-repeat center center / contain;}
 div[class*= "Pd47"]{background: url(images/Pd47.jpg) no-repeat center center / contain;}
 div[class*= "Pd48"]{background: url(images/Pd48.jpg) no-repeat center center / contain;}
+
+div[class*= "Pd51"]{background: url(images/Pd51.jpg) no-repeat center center / contain;}
+div[class*= "Pd52"]{background: url(images/Pd52.jpg) no-repeat center center / contain;}
+div[class*= "Pd53"]{background: url(images/Pd53.jpg) no-repeat center center / contain;}
+div[class*= "Pd54"]{background: url(images/Pd54.jpg) no-repeat center center / contain;}
+div[class*= "Pd55"]{background: url(images/Pd55.jpg) no-repeat center center / contain;}
+div[class*= "Pd56"]{background: url(images/Pd56.jpg) no-repeat center center / contain;}
+div[class*= "Pd57"]{background: url(images/Pd57.jpg) no-repeat center center / contain;}
+div[class*= "Pd58"]{background: url(images/Pd58.jpg) no-repeat center center / contain;}
+
 li[class|="p"] a span{
     display: block;
     text-align: center;
@@ -721,4 +731,111 @@ li[class|="p"] a span{
     width: 1200px;
     height: 800px;
     margin: 0 auto;
+}
+#thirdFloor h3{
+    text-align: center;
+    font-size: 30px;
+    padding-top: 10px;
+}
+#thirdFloor h3 b{
+    color: orange;
+}
+.cookWrap{
+    position: relative;
+    width: 1200px;
+    height: 800px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.recipe{
+    position: absolute;
+    width: 1000px;
+    height: 800px;
+    border: 1px solid darkgray;
+    transition: left ease-in-out 1000ms;
+}
+.recipe label{
+    font-size: 90px;
+}
+label[class*= "chevron-left"]{
+    float: left;
+    margin-top: 180px;
+}
+label[class*= "chevron-right"]{
+    float:right;
+    margin-top:180px;
+    display:block;
+}
+input[id*="c1"]:checked ~ div[class~="card1"]{
+    left: 0;
+}
+input[id*="c1"]:checked ~ div[class~="card2"]{
+    left: 100%;
+}
+input[id*="c1"]:checked ~ div[class~="card3"]{
+    left: 200%;
+}
+input[id*="c2"]:checked ~ div[class~="card2"]{
+    left: 0;
+}
+input[id*="c2"]:checked ~ div[class~="card3"]{
+    left: 100%;
+}
+input[id*="c2"]:checked ~ div[class~="card1"]{
+    left: -100%;
+}
+input[id*="c3"]:checked ~ div[class~="card2"]{
+    left: -100%;
+}
+input[id*="c3"]:checked ~ div[class~="card3"]{
+    left: 0;
+}
+input[id*="c3"]:checked ~ div[class~="card1"]{
+    left: -200%;
+}
+.recipe h4{
+    margin: 10px;
+    text-align: center;
+    font-size: 22px;
+    background-color: white;
+}
+.recipe iframe{
+    width: 1000px;
+    height: 588px;
+}
+.recipe div{
+    width: 260px;
+    height: 150px;
+    border: 1px solid darkgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    float: left;
+    margin: 0 8px; 
+}
+.recipe div span{
+    display: block;
+    width: 120px;
+    height: 50px;
+}
+.videoPd1{
+    background: url(images/videoPd1.jpg) no-repeat left center / contain;
+}
+.videoPd2{
+    background: url(images/videoPd2.jpg) no-repeat left center / contain;
+}
+
+
+#fourthFloor{
+    clear: both;
+    width: 1200px;
+    height: 300px;
+    margin: 60px auto;
+    border: 1px solid green;
+}
+#fourthFloor article{
+    float: left;
+    width: 260px;
+    height: 150px;
 }
