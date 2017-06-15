@@ -729,13 +729,13 @@ li[class|="p"] a span{
 
 #thirdFloor{
     width: 1200px;
-    height: 800px;
+    height: 870px;
     margin: 0 auto;
 }
 #thirdFloor h3{
     text-align: center;
     font-size: 30px;
-    padding-top: 10px;
+    padding: 10px 0;
 }
 #thirdFloor h3 b{
     color: orange;
@@ -743,28 +743,31 @@ li[class|="p"] a span{
 .cookWrap{
     position: relative;
     width: 1200px;
-    height: 800px;
+    height: 840px;
     overflow: hidden;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 .recipe{
     position: absolute;
-    width: 1000px;
+    width: 1200px;
     height: 800px;
-    border: 1px solid darkgray;
     transition: left ease-in-out 1000ms;
+    display: flex;
+    align-content: space-between;
 }
 .recipe label{
-    font-size: 90px;
+    font-size: 80px;
+    margin-top: 400px;
+    opacity: .3;
+}
+.recipe label:hover{
+    opacity: 1;
 }
 label[class*= "chevron-left"]{
-    float: left;
-    margin-top: 180px;
+    margin-right: 10px;
 }
 label[class*= "chevron-right"]{
-    float:right;
-    margin-top:180px;
-    display:block;
+    margin-left: 10px;
 }
 input[id*="c1"]:checked ~ div[class~="card1"]{
     left: 0;
@@ -793,28 +796,30 @@ input[id*="c3"]:checked ~ div[class~="card3"]{
 input[id*="c3"]:checked ~ div[class~="card1"]{
     left: -200%;
 }
-.recipe h4{
+.recipe > div{
+    border: 1px solid darkgray;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    text-align: center;
+}
+.recipe div h4{
     margin: 10px;
     text-align: center;
     font-size: 22px;
-    background-color: white;
 }
-.recipe iframe{
-    width: 1000px;
-    height: 588px;
-}
-.recipe div{
+.recipe >div > div{
     width: 260px;
     height: 150px;
     border: 1px solid darkgray;
+    background-color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: flex-end;
     float: left;
-    margin: 0 8px; 
+    margin: 20px 8px; 
 }
-.recipe div span{
+.recipe >div > div span{
     display: block;
     width: 120px;
     height: 50px;
@@ -825,17 +830,161 @@ input[id*="c3"]:checked ~ div[class~="card1"]{
 .videoPd2{
     background: url(images/videoPd2.jpg) no-repeat left center / contain;
 }
-
+.videoPd3{
+    background: url(images/videoPd3.jpg) no-repeat left center / contain;
+}
+.videoPd4{
+    background: url(images/videoPd4.jpg) no-repeat left center / contain;
+}
+.videoPd5{
+    background: url(images/videoPd5.jpg) no-repeat left center / contain;
+}
+.videoPd6{
+    background: url(images/videoPd6.jpg) no-repeat left center / contain;
+}
 
 #fourthFloor{
     clear: both;
     width: 1200px;
-    height: 300px;
-    margin: 60px auto;
-    border: 1px solid green;
+    height: 230px;
+    margin: 80px auto 35px;
+    border: 1px solid darkgray;
 }
 #fourthFloor article{
     float: left;
     width: 260px;
+    height: 210px;
+    margin: 10px 15px; 
+}
+#fourthFloor article:hover{
+    border: 1px solid darkgray;
+}
+#fourthFloor article h4{
+    border-bottom: 2px solid black;
+    padding-bottom: 8px;
+    margin-bottom: 5px;
+}
+#fourthFloor article > a{
+    display: block;
+    float: right;
+    width: 80px;
+    height: 25px;
+    margin-top: -29px;
+}
+#fourthFloor article:first-child span:nth-of-type(1){
+    font-size: 18px;
+}
+#fourthFloor article:first-child span:nth-of-type(2){
+    display: block;
+    font-weight: bold;
+    font-size: 24px;
+}
+#fourthFloor article:first-child span:nth-of-type(3){
+    font-size: 15px;
+    font-weight: 600;
+}
+#fourthFloor article:first-child span:nth-of-type(4){
+    display: block;
+    font-size: 15px;
+}
+#fourthFloor article:first-child span:nth-of-type(5){
+    font-size: 14px;
+    color: gray;
+}
+#fourthFloor article:first-child i{
+    font-style: normal;
+    color: orange;
+}
+#fourthFloor article:not(:last-child) ul li{
+    width: 240px;
+    float: right;
+}
+#fourthFloor article ul li{
+    list-style: square;
+}
+#fourthFloor article:not(:last-child) ul li a{
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 240px;    
+}
+#fourthFloor article:last-child{
+    width: 265px;
+}
+#fourthFloor article:last-child ul{
+    font-size: 12px;
+    font-weight: 600;
+}
+#fourthFloor article:last-child p{
+    color: orange;
+    font-weight: bold;
+    padding-bottom: 3px;
+    border-bottom: 1px solid orange;
+    border-bottom-style: dashed;
+}
+
+
+footer{
     height: 150px;
+}
+footer div.f1{
+    border-top: 2px solid orange;
+    border-bottom: 1px solid darkgray;
+    padding: 5px 0;
+    margin-bottom: 5px;
+}
+.f1 div{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.f1 ul{
+    width: 1000px;
+    height: 28px;
+    display: flex;
+    justify-content: flex-start;
+}
+.f1 ul li a{
+    line-height: 28px;
+    padding:0 20px;
+    border-right: 1px solid gray;
+    font-size: 15px;
+}
+.f1 span{
+    display: block;
+    background: url(images/img_ottogiSite.gif) no-repeat center center;
+    width: 118px;
+    height: 20px;  
+}
+.f1 ul li:first-child a{
+    padding-left: 0;
+}
+.f1 ul li:last-child a{
+    border-right: none;
+}
+.f1 ul li:nth-child(3) a{
+    color: #FFCF43;
+}
+footer div.f2{
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+}
+.f2 span{
+    display: block;
+}
+.f2 span:first-child{
+    background: url(images/copyright_1.gif) no-repeat center center;
+    width: 620px;
+    height: 85px;
+    padding-top: 45px;
+    float: left; 
+}
+.f2 span:last-child{
+    background: url(images/verisign.gif) no-repeat center center;
+    width: 290px;
+    height: 110px;
+    float: right;
 }
