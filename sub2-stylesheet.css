@@ -12,6 +12,11 @@ header {
     height: 25px;
     font-size: 14px;
 }
+.brand{
+    flex: initial;
+    display: inline-block;
+    margin-top: 5px;
+}
 .gnb label {
     float: left;
     width: 90px;
