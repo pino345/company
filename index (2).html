@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>오뚜기에 오신걸 환영합니다.</title>
+    <link rel="shortcut icon" href="images/logo.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        li{
+            list-style: none;
+        }
+        
+        header{
+            border-bottom: 1px solid darkgray;
+            width: 100%;
+            height: 80px;
+            position: fixed;
+            z-index: 100;
+            background: #FEF04A;
+            
+        }
+        .wrap{
+            margin: 0 auto;
+            width: 100%;
+            height: inherit;
+            display: flex;
+            justify-content: space-around;
+        }
+        .logo{
+            display: block;
+            width: 75px;
+            height: 75px;
+            transform: rotate(-10deg);
+            transform-origin: 50% 100%;
+            animation: logoMove 5s ease-in-out infinite;
+        }
+        .logo img{
+            height: 75px;
+            width: 75px;
+            transform: scale(1.5);
+        }
+        @keyframes logoMove{
+            0%{transform: rotate(-10deg);}
+            50%{transform: rotate(10deg);}
+            100%{transform: rotate(-10deg);}
+        }
+        #topNavi{
+            width: 750px;
+            height: 80px;
+            overflow: hidden;
+            z-index: 10;
+            transition: all .2s ease-in-out;
+        }
+        #topNavi:hover{
+            height: 330px;
+            overflow: visible;
+        }
+        .navi_layer{
+            width: 100%;
+            border-bottom: 1px solid darkgray;
+            box-shadow: 0 1px 1px darkgray;
+            position: absolute;
+            top: 81px;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            height: 0px;
+            transition: all 0.2s ease-in-out;
+        }
+        #topNavi:hover .navi_layer{
+            height: 230px;
+        }
+        .white_bg{
+            background-color: white;
+            height: 100%;
+        }
+        .depth1{
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+        }
+        .depth1 > li, .depth1 > li > a{
+            float: left;
+            width: 148px;
+            height: 80px;
+        }
+        
+        .navi_ico{
+            width: 150px;
+            height: 35px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .ico{
+            width: 27px;
+            height: 27px;
+            background: url(src="http://placehold.it/27x27") no-repeat center center;
+            opacity: 0;
+            z-index: 100;
+            position: absolute;
+            top: 70px;
+            transition: all 0.3s ease-in-out;
+        }
+        .depth1 li:nth-child(1):hover .ico, .depth1 li:nth-child(2):hover .ico, .depth1 li:nth-child(3):hover .ico, .depth1 li:nth-child(4):hover .ico{
+            position: absolute;
+            top: 90px;
+            opacity: 1;
+            background-color: gold;
+        }
+        .numb{
+            z-index: 4;
+            width: 150px;
+            height: 16px;
+            line-height: 16px;
+        }
+        .depth2{ 
+            width: 150px;
+            height: 150px;
+            margin-top: 10px;
+        }
+        .depth2 li{
+            height: 30px;
+            line-height: 30px;
+        }
+        .naviRight{
+            width: 230px;
+            height: 80px;
+            line-height: 80px;
+        }
+        .naviRight i{
+            border: 1px solid darkgray;
+            border-radius: 2px;
+            color: dimgray;
+            font-size: 30px;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            padding: 5px;
+            margin-left: 10px;
+        }
+        #main{
+            /*background: url(images/00.jpg) no-repeat fixed center top / cover;*/
+            width: 100%;
+            height: 800px;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+        /*#a11{
+                        
+        }
+        #a11 p{
+            border: 1px solid orange;
+            width: 300px;
+            position: absolute;
+            top: 100px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            transition: all 1s;
+            animation: ppt 2s 1s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes ppt{
+            0%{top: 100px;}
+            100%{top: 400px;}
+        }*/
+        .slider{
+            width: 500%;
+            height: 800px;
+            position: relative;
+            left: 0;
+            animation: slide 20s infinite;
+        }
+        @keyframes slide{
+            0% { left: 0%; }
+            20% { left: 0%; }
+            25% { left: -100%; }
+            45% { left: -100%; }
+            50% { left: -200%; }
+            70% { left: -200%; }
+            75% { left: -300%; }
+            95% { left: -300%; }
+            100% { left: -400%; }
+        }
+        .slider > div{
+            width: 20%;
+            height: 600px;
+            float: left;
+            margin-top: 140px;
+        }
+        .slide1{
+            background: url(images/new1.jpg) no-repeat center center;
+            
+        }
+        .slide2{
+            background: url(images/03.jpg) no-repeat center center;
+        }
+        .slide3{
+            background: url("http://placehold.it/1200x800") no-repeat center center;
+            width: 1200px;
+            height: 600px;
+        }
+        .slide4{
+            background: url("http://placehold.it/1200x800") no-repeat center center;
+        }
+        .slide5{
+            background: url("http://placehold.it/1200x800") no-repeat center center;
+        }
+        .slideText{
+            border: 1px solid gray;
+            width: 1200px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            white-space: nowrap;
+            position: relative;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .button{
+            border: 1px solid gray;
+            width: 100px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            position: relative;
+            top: 520px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .block{
+            border: 1px solid green;
+            width: 1200px;
+            height: 300px;
+            margin: -30px auto;
+            margin-bottom: 0;
+            z-index: 10;
+        }
+        .wall{
+            clear: both;
+            border: 1px solid green;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+        }
+        .wall div{
+            border: 1px solid gold;
+            width: 100px;
+            height: 100px;
+            font-size: 80px;
+            text-align: center;
+            line-height: 100px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        .comp1{
+            animation: wander01 linear 7s;
+            animation-iteration-count: infinite;
+            transform-origin: 50% 50%;
+            animation-direction: alternate; 
+        }
+        @keyframes wander01{
+            0%{transform: translate(475px, 32px) rotate(0deg);}
+            100%{transform: translate(475px, 550px) rotate(180deg);}
+        }
+        .comp2{
+            animation: wander02 linear 9s;
+            animation-iteration-count: infinite;
+            transform-origin: 50% 50%;
+            animation-direction: alternate; 
+        }
+        @keyframes wander02{
+            0%{transform: translate(100px, 40px) rotate(0deg);}
+            100%{transform: translate(100px, 200px) rotate(180deg);}
+        }
+        .comp3{
+            animation: wander03 linear 9s;
+            animation-iteration-count: infinite;
+            transform-origin: 50% 50%;
+            animation-direction: alternate; 
+        }
+        @keyframes wander03{
+            0%{transform: translate(1430px, 300px) rotate(0deg);}
+            100%{transform: translate(1430px, 500px) rotate(180deg);}
+        }
+        #firstFloor{
+            border: 1px solid gold;
+            background: white;
+            height: 500px;
+        }
+        #firstFloor p{
+            border: 1px solid black;
+            width: 200px;
+            height: 50px;
+            margin: 30px auto;
+            margin-bottom: -45px;
+        }
+        .aaa{
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .gradient{
+            margin: 0 20px;
+            float: left;
+            background: linear-gradient(45deg,#ff4f58 0,#ff4f58 57%,#fd7048 100%);
+            width: 300px;
+            height: 300px;
+        }
+        #secondFloor{
+            background: url(images/b.jpg) no-repeat center center;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="wrap">
+            <a href="#" class="logo">
+                <image src="images/logo.svg"></image>
+            </a>
+            <nav id="topNavi">
+                <ul class="depth1">
+                    <li>
+                        <a href="#">회사소개</a>
+                        <div class="navi_ico">
+                            <div class="ico a"></div>
+                            <div class="numb">01</div>
+                        </div>
+                        <ul class="depth2">
+                            <li><a href="#">(주)오뚜기 소개</a></li>
+                            <li><a href="#">연혁</a></li>
+                            <li><a href="#">CI</a></li>
+                            <li><a href="#">투자정보</a></li>
+                            <li><a href="#">오시는 길</a></li>
+                        </ul>                
+                    </li>
+                    <li>
+                        <a href="#">홍보채널</a>
+                        <div class="navi_ico">
+                            <div class="ico b"></div>
+                            <div class="numb">02</div>
+                        </div>
+                        <ul class="depth2">
+                            <li><a href="#">뉴스</a></li>
+                            <li><a href="#">미디어</a></li>
+                            <li><a href="#">SNS&amp;이벤트</a></li>
+                            <li><a href="#">행복이 가득한 집</a></li>
+                            <li><a href="#">견학신청</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">고객센터</a>
+                        <div class="navi_ico">
+                            <div class="ico c"></div>
+                            <div class="numb">03</div>
+                        </div>
+                        <ul class="depth2">
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">고객상담실</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">채용</a>
+                        <div class="navi_ico">
+                            <div class="ico d"></div>
+                            <div class="numb">04</div>
+                        </div>
+                        <ul class="depth2">
+                            <li><a href="#">채용공고</a></li>
+                            <li><a href="#">인사제도</a></li>
+                            <li><a href="#">직무소개</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">입사지원</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">쇼핑몰</a></li>
+                </ul>
+                <div class="navi_layer">
+                    <div class="white_bg"></div>
+                </div>          
+            </nav>
+            <div class="naviRight">
+                <a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-globe" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </header>
+    <section id="main">
+        <aside class="slider">
+            <div class= "slide1">
+                <p class="slideText">자연과 함께 맛으로 행복한 세상</p>
+                <div class="button">1</div>
+            </div>
+            <div class="slide2">
+                <p class="slideText">365일 웃음 가득, 행복 가득 - 맛있는 생활</p>
+                <div class="button">2</div>
+            </div>
+            <div class="slide3">
+                <p class="slideText">최고의 막을 향한 열정, 오뚜기 사람들</p>
+                <div class="button">3</div>
+            </div>
+            <div class="slide4">
+                <p class="slideText">맛있는 식품은 신선한 원료에서</p>
+                <div class="button">4</div>
+            </div>
+            <div class="slide5">
+                <p class="slideText">우수한 품질은 좋은 시설에</p>
+                <div class="button">5</div>
+            </div>
+        </aside>
+        <div class="block">
+            
+        </div>
+        <!--<article id="a11">
+            <p>자연과 함께 맛으로 행복한 세상</p>
+        </article>-->       
+    </section>
+    
+    <div class="wall">
+        <div class="comp1"><i class="fa fa-child" aria-hidden="true"></i></div>
+        <div class="comp2"><i class="fa fa-birthday-cake" aria-hidden="true"></i></div>
+        <div class="comp3"><i class="fa fa-bug" aria-hidden="true"></i></div>
+    </div>
+    <section id="firstFloor">
+        <p></p>
+        <div class="aaa">
+        <div class="gradient"></div>
+        <div class="gradient"></div>
+        <div class="gradient"></div>
+        </div>
+    </section>
+    <section id="secondFloor">
+        <div></div>
+    </section>
+</body>
+</html>
