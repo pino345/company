@@ -1,11 +1,56 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<!--
+    1. li : style-index.css 3번째~8번째 줄
+        li{
+            list-style: none;
+            *zoom: 1;
+            *display: inline;
+            *list-style-type: none;
+        }
+    2. animation : style-index.css 23번째, 31~35번째 줄
+        .logo{
+            animation: logoMove 5s ease-in-out infinite;
+            -moz-animation: logoMove 5s ease-in-out infinite;
+            -o-animation: logoMove 5s ease-in-out infinite;
+            -ms-animation: logoMove 5s ease-in-out infinite;
+        }
+        
+       transition : style-index.css 41번째, 45번째~49번째 줄
+       #topNavi{
+            transition: all .2s ease-in-out;
+            -moz-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+            -ms-transition: all .2s ease-in-out;
+        }
+    3. opacity : style-index.css 83번째~87번째, 107번째 줄
+       .depth1 > li > a span::before {
+            opacity: 0;
+            filter: alpha(opacity=0);
+            ms-filter: "alpha(opacity=0)";
+            filter: progid: DXImageTransform.Microsoft.Alpha(opacity=0);
+        }
+    4. css style 속성 color : style-index.css 2번째~7번째 줄
+        a{
+            color: black; 
+            *color: black;
+            -color: black;
+            text-decoration: none;
+        }
+    5. 가상 클래스 속성 : index.html 51번째~54번째 줄
+        [if it IE 9]
+        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+        [endif]
+-->
     <meta charset="UTF-8">
     <title>오뚜기에 오신걸 환영합니다.</title>
     <link rel="stylesheet" href="index(2)-stylesheet.css" type="text/css">
     <link rel="shortcut icon" href="images/logo.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+<!--[if it IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
 </head>
 <body>
     <header>
@@ -66,7 +111,9 @@
                             <li><a href="#" data-hover="입사지원">입사지원</a></li>
                         </ul>
                     </li>
-                    <li><a href="#"><span data-hover="쇼핑몰">쇼핑몰</span></a></li>
+                    <li>
+                        <a href="#"><span data-hover="쇼핑몰">쇼핑몰</span></a>
+                    </li>
                 </ul>
                 <div class="navi_layer">
                     <div class="white_bg"></div>
@@ -83,31 +130,29 @@
         <article id="slider">
             <div class= "slide1">
                 <p class="slideText">자연과 함께 맛으로 행복한 세상</p>
-                <div class="button">1</div>
             </div>
             <div class="slide2">
                 <p class="slideText">365일 웃음 가득, 행복 가득 - 맛있는 생활</p>
-                <div class="button">2</div>
             </div>
             <div class="slide3">
-                <p class="slideText">최고의 맛을 향한 열정, 오뚜기 사람들</p>
-                <div class="button">3</div>
+                <p class="slideText"></p>
             </div>
             <div class="slide4">
                 <p class="slideText">맛있는 식품은 신선한 원료에서</p>
-                <div class="button">4</div>
             </div>
             <div class="slide5">
-                <p class="slideText">우수한 품질은 좋은 시설에</p>
-                <div class="button">5</div>
+                <p class="slideText">자연과 함께 맛으로 행복한 세상</p>
             </div>
         </article>
-        <div class="block">
-            
-        </div>     
+        <!--<div class="block">
+            <div class="slideTitle">(주)오뚜기</div>
+            <div class="slideTitle">(주)오뚜기</div>
+            <div class="slideTitle">(주)오뚜기</div>
+            <div class="slideTitle">(주)오뚜기</div>
+        </div>-->     
     </section>
     
-    <div class="wall">
+    <!--<div class="wall">
         <div class="comp1"><i class="fa fa-child" aria-hidden="true"></i></div>
         <div class="comp2"><i class="fa fa-birthday-cake" aria-hidden="true"></i></div>
         <div class="comp3"><i class="fa fa-bug" aria-hidden="true"></i></div>
@@ -131,6 +176,6 @@
     </section>
     <section id="secondFloor">
         <div></div>
-    </section>
+    </section>-->
 </body>
 </html>

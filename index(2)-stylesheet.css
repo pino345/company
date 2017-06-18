@@ -1,29 +1,43 @@
 *{margin: 0; padding: 0;}
-a{color: black; text-decoration: none;}
-li{list-style: none;}
+a{
+    color: black; 
+    *color: black;
+    -color: black;
+    text-decoration: none;
+}
+li{
+    list-style: none;
+    *zoom: 1;
+    *display: inline;
+    *list-style-type: none;
+}
         
 header{
     border-bottom: 1px solid darkgray;
     width: 100%;
-    height: 80px;
-    position: fixed;
+    height: 100px;
     z-index: 100;
     background-color: rgba(255,255,255, .9);
 }
 .wrap{
     margin: 0 auto;
-    width: 1200px;
+    height: 100px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .logo{
     display: block;
     width: 70px;
     height: 70px;
+    margin-top: 15px;
     background: url(images/big-logo.png) no-repeat center center / contain;
+    -ms-behavior: url('backgrondsize.');
     transform: rotate(-10deg);
     transform-origin: 50% 100%;
     animation: logoMove 5s ease-in-out infinite;
+    -moz-animation: logoMove 5s ease-in-out infinite;
+    -o-animation: logoMove 5s ease-in-out infinite;
+    -ms-animation: logoMove 5s ease-in-out infinite;
 }
 @keyframes logoMove{
     0%{transform: rotate(-10deg);}
@@ -31,11 +45,13 @@ header{
     100%{transform: rotate(-10deg);}
 }
 #topNavi{
-    width: 750px;
-    height: 80px;
+    height: 100px;
     overflow: hidden;
     z-index: 10;
     transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
 }
 #topNavi:hover{
     height: 330px;
@@ -44,11 +60,12 @@ header{
 .depth1 > li, .depth1 > li > a, .depth1 > li > a span{
     float: left;
     width: 150px;
-    height: 80px;
-    line-height: 80px;
+    height: 100px;
+    line-height: 100px;
     text-align: center;
     font-weight: 800;
     font-size: 18px;
+    color: #111;
 }
 .depth1 > li > a {
     -moz-perspective: 900px;
@@ -57,7 +74,6 @@ header{
 }
 .depth1 > li > a span {
     position: relative;
-    display: inline-block;
     -moz-transition: 0.3s;
     -o-transition: 0.3s;
     -webkit-transition: 0.3s;
@@ -72,11 +88,14 @@ header{
 }
 .depth1 > li > a span::before {
     opacity: 0;
+    filter: alpha(opacity=0);
+    ms-filter: "alpha(opacity=0)";
+    filter: progid: DXImageTransform.Microsoft.Alpha(opacity=0);
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    height: 95%;
+    height: 92%;
     background: gold;
     content: attr(data-hover);
     -moz-transition: background 0.3s;
@@ -117,6 +136,11 @@ header{
     z-index: 100;
     transition: all 0.3s ease-in-out;
 }
+.depth1 li:hover .icon{
+    position: absolute;
+    top: 105px;
+    opacity: 1;
+}
 .depth1 li:nth-child(1):hover .icon{
     background: url(images/big-logo.png) no-repeat center center / contain;
 }
@@ -129,12 +153,6 @@ header{
 }
 .depth1 li:nth-child(4):hover .icon{
     background: url(images/jobs.png) no-repeat center center / contain;
-    background-color: white;
-}
-.depth1 li:nth-child(1):hover .icon, .depth1 li:nth-child(2):hover .icon, .depth1 li:nth-child(3):hover .icon, .depth1 li:nth-child(4):hover .icon{
-    position: absolute;
-    top: 85px;
-    opacity: 1;
 }
 .numb{
     z-index: 4;
@@ -144,6 +162,7 @@ header{
 }
 .depth2{ 
     margin-top: 15px;
+    font-size: 15px;
 }
 .depth2 > li, .depth2 > li > a{
     width: 150px;
@@ -199,7 +218,7 @@ header{
     border-bottom: 1px solid darkgray;
     box-shadow: 0 1px 1px darkgray;
     position: absolute;
-    top: 81px;
+    top: 101px;
     left: 0;
     right: 0;
     z-index: -1;
@@ -207,16 +226,17 @@ header{
     transition: all 0.2s ease-in-out;
 }
 #topNavi:hover .navi_layer{
-    height: 275px;
+    height: 290px;
 }
 .white_bg{
     background-color: white;
     height: 100%;
 }
+
+
 #main{
     width: 100%;
     height: 800px;
-    z-index: 10;
     overflow: hidden;
 }
 #slider{
@@ -224,7 +244,7 @@ header{
     height: 800px;
     position: relative;
     left: 0;
-    animation: slide 20s infinite;    
+    animation: slide 30s infinite;    
 }
 @keyframes slide{
     0% {left: 0%;}
@@ -241,44 +261,44 @@ header{
     width: 20%;
     height: 800px;
     float: left;
-    background-attachment: fixed;
+    background-size: 100%;
+    opacity: .8;
 }
-.slide1{background: url(images/b.jpg) no-repeat center center;}
+.slide1{background: url(images/a0b8414bd033fac61a5941575dada986.jpg) no-repeat center top / contain;}
 .slide2{background: url(images/b.jpg) no-repeat center center;}
-.slide3{background: url(images/b.jpg) no-repeat center center;}
-.slide4{background: url(images/b.jpg) no-repeat center center;}
-.slide5{background: url(images/b.jpg) no-repeat center center;}
+.slide3{background: url(images/w_visual.jpg) no-repeat center center / contain;}
+.slide4{background: url(images/slide1.jpg) no-repeat center center;}
+.slide5{background: url(images/a0b8414bd033fac61a5941575dada986.jpg) no-repeat center top;}
+
 .slideText{
-    border: 1px solid gray;
     width: 1200px;
     height: 80px;
     line-height: 80px;
     text-align: center;
+    font-size: 28px;
+    font-weight: bold;
     position: relative;
-    top: 140px;
+    top: 300px;
     left: 50%;
     transform: translateX(-50%);
     transition: all .3 ease-in-out;
 }
-.button{
-    border: 1px solid gray;
-    width: 100px;
-    height: 80px;
-    line-height: 80px;
-    text-align: center;
-    position: relative;
-    top: 520px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.block{
+/*.block{
     border: 1px solid green;
     width: 1200px;
-    height: 200px;
-    margin: -200px auto;
-    margin-bottom: 0;
-            z-index: 10;
-        }
+    height: 150px;
+    margin: -150px auto;
+    position: absolute;
+    left:0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+}
+.slideTitle{
+    border: 5px solid gray;
+    width: 260px;
+    height: 140px;
+}
         .wall{
             clear: both;
             border: 1px solid green;
@@ -360,4 +380,4 @@ header{
         #secondFloor{
             background: url(images/b.jpg) no-repeat center center;
             height: 500px;
-        }
+        }*/
